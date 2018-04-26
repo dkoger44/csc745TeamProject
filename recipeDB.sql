@@ -8,12 +8,12 @@ drop sequence seq_mealplan;
 
 create table Ingredients (
 Name varchar2(20) primary key,
-Calories varchar2(20),
-Fat varchar2(20),
-Sodium varchar2(20),
+Calories int,
+Fat int,
+Sodium int,
 Fgroup varchar2(20),
-Proteins varchar2(20),
-Sugar varchar2(20)
+Proteins int,
+Sugar int
 );
 
 create table Recipe (
@@ -26,7 +26,7 @@ Name varchar2(20)
 create table RecipeIngredients (
 IngredientsName varchar2(20),
 RecipeID int,
-Qty number,
+Qty int,
 constraint ingred foreign key (IngredientsName) references Ingredients(Name),
 constraint recip foreign key (RecipeID) references Recipe(RecipeID)
 );
